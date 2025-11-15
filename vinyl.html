@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forhp's music library</title>
+    <link rel="icon" href="media/spinning-disk.gif" />
+    <link href="style1.css" rel="stylesheet" type="text/css" media="all" />
+    <style>
+      header {
+        background: linear-gradient(135deg, #e74c3c, #531913);
+      }
+
+      nav {
+        background-color: #ab3528;
+      }
+
+      .nav-button:hover {
+        background-color: #e74c3c;
+      }
+
+      .nav-button.active {
+        background-color: #e74c3c;
+      }
+
+      .stat-number {
+        color: #e74c3c;
+      }
+
+      .page-title {
+        border-bottom: 2px solid #e74c3c;
+      }
+
+      footer {
+        background-color: #ab3528;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>forhp's music library</h1>
+      <p class="subtitle">A curated library of CDs and vinyl records</p>
+    </header>
+
+    <nav>
+      <a href="index.html" class="nav-button">CD Collection</a>
+      <a href="vinyl.html" class="nav-button active">Vinyl Collection</a>
+    </nav>
+
+    <div class="container">
+      <h2 class="page-title">Vinyl Collection</h2>
+
+      <div class="collection-grid">
+        <!-- Vinyl items -->
+        <div class="collection-item">
+          <div class="item-image vinyl-image">
+            <i class="fas fa-compact-disc"></i>
+          </div>
+          <div class="item-details">
+            <div class="item-title">title</div>
+            <div class="item-artist">artist name</div>
+            <div class="item-year">release year</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>blehhhhhhh :P</p>
+    </footer>
+
+    <script>
+      // simple script to handle navigation highlighting
+      document.addEventListener("DOMContentLoaded", function () {
+        const navButtons = document.querySelectorAll(".nav-button");
+
+        navButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            navButtons.forEach((btn) => btn.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

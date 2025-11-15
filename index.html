@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>forhp's music library</title>
+    <link rel="icon" href="media/spinning-disk.gif" />
+    <link href="style1.css" rel="stylesheet" type="text/css" media="all" />
+  </head>
+  <body>
+    <header>
+      <h1>forhp's music library</h1>
+      <p class="subtitle">A curated library of CDs and vinyl records</p>
+    </header>
+
+    <nav>
+      <a href="index.html" class="nav-button active">CD Collection</a>
+      <a href="vinyl.html" class="nav-button">Vinyl Collection</a>
+    </nav>
+
+    <div class="container">
+      <h2 class="page-title">CD Collection</h2>
+
+      <div class="collection-grid">
+        <!-- CD items -->
+        <div class="collection-item">
+          <div class="item-image cd-image">
+            <img src="media/swimming.png" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">Swimming</div>
+            <div class="item-artist">Mac Miller</div>
+            <div class="item-year">2018</div>
+          </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image cd-image">
+            <img src="media/circles.jpg" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">Circles (Deluxe)</div>
+            <div class="item-artist">Mac Miller</div>
+            <div class="item-year">2020</div>
+          </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image cd-image">
+            <img src="media/chromakopia.jpg" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">CHROMAKOPIA</div>
+            <div class="item-artist">Tyler, The Creator</div>
+            <div class="item-year">2024</div>
+          </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image cd-image">
+            <img src="media/viva-pinata-ost.jpg" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">Viva Pinata OST</div>
+            <div class="item-artist">Grant Kirkhope</div>
+            <div class="item-year">2009</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Total CDs</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Artists</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>blehhhhhhh :P</p>
+    </footer>
+
+    <script>
+      // Simple script to handle navigation highlighting
+      document.addEventListener("DOMContentLoaded", function () {
+        const navButtons = document.querySelectorAll(".nav-button");
+
+        navButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            navButtons.forEach((btn) => btn.classList.remove("active"));
+            this.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
