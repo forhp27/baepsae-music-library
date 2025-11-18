@@ -46,7 +46,17 @@
     <div class="container">
       <h2 class="page-title">Vinyl Collection</h2>
 
-      <div class="collection-grid">
+      <!-- Sort controls -->
+      <div class="sort-controls">
+        <span class="sort-label">Sort by:</span>
+        <select class="sort-dropdown" id="sortOptions">
+          <option value="artist">Artist</option>
+          <option value="title">Name</option>
+          <option value="year">Year</option>
+        </select>
+      </div>
+
+      <div class="collection-grid" id="vinylCollection">
         <!-- Vinyl items -->
         <div class="collection-item">
           <div class="item-image vinyl-image">
@@ -151,6 +161,74 @@
           button.addEventListener("click", function () {
             navButtons.forEach((btn) => btn.classList.remove("active"));
             this.classList.add("active");
+          });
+        });
+
+        // Sorting functionality for vinyl collection
+        const sortDropdown = document.getElementById("sortOptions");
+        const collectionGrid = document.getElementById("vinylCollection");
+        const items = Array.from(
+          collectionGrid.querySelectorAll(".collection-item")
+        );
+
+        // Store original order for "default" option
+        const originalOrder = [...items];
+
+        sortDropdown.addEventListener("change", function () {
+          const sortBy = this.value;
+
+          // Clear the current grid
+          collectionGrid.innerHTML = "";
+
+          // Sort items based on selected option
+          let sortedItems;
+
+          switch (sortBy) {
+            case "title":
+              sortedItems = items.sort((a, b) => {
+                const titleA = a
+                  .querySelector(".item-title")
+                  .textContent.toLowerCase();
+                const titleB = b
+                  .querySelector(".item-title")
+                  .textContent.toLowerCase();
+                return titleA.localeCompare(titleB);
+              });
+              break;
+
+            case "artist":
+              sortedItems = items.sort((a, b) => {
+                const artistA = a
+                  .querySelector(".item-artist")
+                  .textContent.toLowerCase();
+                const artistB = b
+                  .querySelector(".item-artist")
+                  .textContent.toLowerCase();
+                return artistA.localeCompare(artistB);
+              });
+              break;
+
+            case "year":
+              sortedItems = items.sort((a, b) => {
+                const yearA = parseInt(
+                  a.querySelector(".item-year").textContent
+                );
+                const yearB = parseInt(
+                  b.querySelector(".item-year").textContent
+                );
+                return yearA - yearB;
+              });
+              break;
+
+            default:
+              // Default order (original order)
+              sortedItems = originalOrder;
+              break;
+          }
+
+          // Append sorted items back to the grid
+          sortedItems.forEach((item) => {
+            collectionGrid.appendChild(item);
           });
         });
       });
