@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -46,7 +46,7 @@
 
         <div class="collection-item">
           <div class="item-image cd-image">
-            <img src="cover-art/sasha_fierce.jpg" />
+            <img src="cover-art/i_am_sasha_fierce.jpg" />
           </div>
           <div class="item-details">
             <div class="item-title">I am... Sasha Fierce</div>
@@ -448,7 +448,7 @@
 
         <div class="collection-item">
           <div class="item-image cd-image">
-            <img src="cover-art/thriller.jpg" />
+            <img src="cover-art/thriller_40.png" />
           </div>
           <div class="item-details">
             <div class="item-title">Thriller</div>
@@ -736,6 +736,105 @@
 
         <div class="collection-item">
           <div class="item-image cd-image">
+            <img src="cover-art/skinny_dipping.jpg" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">Skinny Dipping</div>
+            <div class="item-artist">Stand Atlantic</div>
+            <div class="item-year">2018</div>
+          </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image cd-image">
+            <img src="cover-art/skinny_dipping.jpg" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">Skinny Dipping</div>
+            <div class="item-artist">Stand Atlantic</div>
+            <div class="item-year">2018</div>
+          </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image cd-image">
+            <img src="cover-art/skinny_dipping.jpg" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">Skinny Dipping</div>
+            <div class="item-artist">Stand Atlantic</div>
+            <div class="item-year">2018</div>
+          </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image cd-image">
+            <img src="cover-art/skinny_dipping.jpg" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">Skinny Dipping</div>
+            <div class="item-artist">Stand Atlantic</div>
+            <div class="item-year">2018</div>
+          </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image cd-image">
+            <img src="cover-art/skinny_dipping.jpg" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">Skinny Dipping</div>
+            <div class="item-artist">Stand Atlantic</div>
+            <div class="item-year">2018</div>
+          </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image cd-image">
+            <img src="cover-art/skinny_dipping.jpg" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">Skinny Dipping</div>
+            <div class="item-artist">Stand Atlantic</div>
+            <div class="item-year">2018</div>
+          </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image cd-image">
+            <img src="cover-art/skinny_dipping.jpg" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">Skinny Dipping</div>
+            <div class="item-artist">Stand Atlantic</div>
+            <div class="item-year">2018</div>
+          </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image cd-image">
+            <img src="cover-art/skinny_dipping.jpg" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">Skinny Dipping</div>
+            <div class="item-artist">Stand Atlantic</div>
+            <div class="item-year">2018</div>
+          </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image cd-image">
+            <img src="cover-art/skinny_dipping.jpg" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">Skinny Dipping</div>
+            <div class="item-artist">Stand Atlantic</div>
+            <div class="item-year">2018</div>
+          </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image cd-image">
             <img src="cover-art/17.jpg" />
           </div>
           <div class="item-details">
@@ -789,7 +888,7 @@
         const sortDropdown = document.getElementById("sortOptions");
         const collectionGrid = document.getElementById("cdCollection");
         const items = Array.from(
-          collectionGrid.querySelectorAll(".collection-item")
+          collectionGrid.querySelectorAll(".collection-item"),
         );
 
         // Store original order for "default" option
@@ -833,10 +932,10 @@
             case "year":
               sortedItems = items.sort((a, b) => {
                 const yearA = parseInt(
-                  a.querySelector(".item-year").textContent
+                  a.querySelector(".item-year").textContent,
                 );
                 const yearB = parseInt(
-                  b.querySelector(".item-year").textContent
+                  b.querySelector(".item-year").textContent,
                 );
                 return yearA - yearB;
               });
