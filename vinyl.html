@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -50,6 +50,7 @@
       <div class="sort-controls">
         <span class="sort-label">Sort by:</span>
         <select class="sort-dropdown" id="sortOptions">
+          <option>- Select -</option>
           <option value="artist">Artist</option>
           <option value="title">Album</option>
           <option value="year">Year</option>
@@ -58,27 +59,6 @@
 
       <div class="collection-grid" id="vinylCollection">
         <!-- Vinyl items -->
-        <div class="collection-item">
-          <div class="item-image vinyl-image">
-            <img src="cover-art/loveyourself_tear.jpg" />
-          </div>
-          <div class="item-details">
-            <div class="item-title">Love Yourself: Tear</div>
-            <div class="item-artist">BTS</div>
-            <div class="item-year">2018</div>
-          </div>
-        </div>
-
-        <div class="collection-item">
-          <div class="item-image vinyl-image">
-            <img src="cover-art/kotms2.jpeg" />
-          </div>
-          <div class="item-details">
-            <div class="item-title">King of the Mischievous South Vol. 2</div>
-            <div class="item-artist">Denzel Curry</div>
-            <div class="item-year">2024</div>
-          </div>
-        </div>
 
         <div class="collection-item">
           <div class="item-image vinyl-image">
@@ -99,6 +79,17 @@
             <div class="item-title">Big Waves Vol. 1</div>
             <div class="item-artist">Kehlani</div>
             <div class="item-year">2025</div>
+          </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image vinyl-image">
+            <img src="cover-art/dw_and_hooligans.png" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">Doo-Wops & Hooligans</div>
+            <div class="item-artist">Bruno Mars</div>
+            <div class="item-year">2010</div>
           </div>
         </div>
 
@@ -126,6 +117,17 @@
 
         <div class="collection-item">
           <div class="item-image vinyl-image">
+            <img src="cover-art/loveyourself_tear.jpg" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">Love Yourself: Tear</div>
+            <div class="item-artist">BTS</div>
+            <div class="item-year">2018</div>
+          </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image vinyl-image">
             <img src="cover-art/traumazine.jpg" />
           </div>
           <div class="item-details">
@@ -135,21 +137,43 @@
           </div>
         </div>
 
-        <div class="stats">
-          <div class="stat-box">
-            <div class="stat-number">7</div>
-            <div class="stat-label">Total Vinyls</div>
+        <div class="collection-item">
+          <div class="item-image vinyl-image">
+            <img src="cover-art/kotms2.jpeg" />
           </div>
-          <div class="stat-box">
-            <div class="stat-number">5</div>
-            <div class="stat-label">Artists</div>
+          <div class="item-details">
+            <div class="item-title">King of the Mischievous South Vol. 2</div>
+            <div class="item-artist">Denzel Curry</div>
+            <div class="item-year">2024</div>
           </div>
+        </div>
+
+        <div class="collection-item">
+          <div class="item-image vinyl-image">
+            <img src="cover-art/while_we_wait.png" />
+          </div>
+          <div class="item-details">
+            <div class="item-title">While We Wait</div>
+            <div class="item-artist">Kehlani</div>
+            <div class="item-year">2019</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-number">7</div>
+          <div class="stat-label">Total Vinyls</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Artists</div>
         </div>
       </div>
     </div>
 
     <footer>
-      <p>updated 11/17/2025</p>
+      <p>updated 3/12/2026</p>
     </footer>
 
     <script>
@@ -168,7 +192,7 @@
         const sortDropdown = document.getElementById("sortOptions");
         const collectionGrid = document.getElementById("vinylCollection");
         const items = Array.from(
-          collectionGrid.querySelectorAll(".collection-item")
+          collectionGrid.querySelectorAll(".collection-item"),
         );
 
         // Store original order for "default" option
@@ -211,10 +235,10 @@
             case "year":
               sortedItems = items.sort((a, b) => {
                 const yearA = parseInt(
-                  a.querySelector(".item-year").textContent
+                  a.querySelector(".item-year").textContent,
                 );
                 const yearB = parseInt(
-                  b.querySelector(".item-year").textContent
+                  b.querySelector(".item-year").textContent,
                 );
                 return yearA - yearB;
               });
