@@ -27,7 +27,7 @@
         <select class="sort-dropdown" id="sortOptions">
           <option selected="selected">- Select -</option>
           <option value="artist">Artist</option>
-          <option value="title">Album</option>
+          <option value="title">Album Title</option>
           <option value="year">Year</option>
         </select>
       </div>
@@ -994,6 +994,7 @@
           let sortedItems;
 
           switch (sortBy) {
+            // Album title organization
             case "title":
               sortedItems = items.sort((a, b) => {
                 const titleA = a
@@ -1006,6 +1007,7 @@
               });
               break;
 
+            // Artist organization
             case "artist":
               sortedItems = items.sort((a, b) => {
                 // Handle items without artist (like the Shrek soundtrack)
@@ -1019,6 +1021,7 @@
               });
               break;
 
+            // Album release year organization
             case "year":
               sortedItems = items.sort((a, b) => {
                 const yearA = parseInt(
