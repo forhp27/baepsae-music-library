@@ -25,14 +25,15 @@
       <div class="sort-controls">
         <span class="sort-label">Sort by:</span>
         <select class="sort-dropdown" id="sortOptions">
-          <option selected="selected">- Select -</option>
+          <option selected="selected">Latest Added</option>
           <option value="artist">Artist</option>
-          <option value="title">Album Title</option>
+          <!--<option value="title">Album Title</option>-->
           <option value="year">Year</option>
         </select>
       </div>
 
       <div class="collection-grid" id="cdCollection">
+
         <!-- CD entries -->
 
 
@@ -41,7 +42,7 @@
         
         <div class="collection-item">
           <div class="item-image cd-image">
-            <img src="cover-art/" />
+            <img src="cover-art/into_the_spiderverse.webp" />
           </div>
           <div class="item-details">
             <div class="item-title">Spiderman: Into The Spiderverse Soundtrack</div>
@@ -52,7 +53,7 @@
 
         <div class="collection-item">
           <div class="item-image cd-image">
-            <img src="cover-art/" />
+            <img src="cover-art/yet_to_come.webp" />
           </div>
           <div class="item-details">
             <div class="item-title">Yet To Come (The Most Beautiful Moment)</div>
@@ -63,7 +64,7 @@
 
         <div class="collection-item">
           <div class="item-image cd-image">
-            <img src="cover-art/" />
+            <img src="cover-art/maroon_5_v.webp" />
           </div>
           <div class="item-details">
             <div class="item-title">V</div>
@@ -74,7 +75,7 @@
 
         <div class="collection-item">
           <div class="item-image cd-image">
-            <img src="cover-art/" />
+            <img src="cover-art/kehlani_album.webp" />
           </div>
           <div class="item-details">
             <div class="item-title">Kehlani</div>
@@ -85,7 +86,7 @@
 
         <div class="collection-item">
           <div class="item-image cd-image">
-            <img src="cover-art/" />
+            <img src="cover-art/toni_braxton_album.webp" />
           </div>
           <div class="item-details">
             <div class="item-title">Toni Braxton</div>
@@ -96,7 +97,7 @@
 
         <div class="collection-item">
           <div class="item-image cd-image">
-            <img src="cover-art/" />
+            <img src="cover-art/moana_ost.webp" />
           </div>
           <div class="item-details">
             <div class="item-title">Moana Sountrack</div>
@@ -107,7 +108,7 @@
 
         <div class="collection-item">
           <div class="item-image cd-image">
-            <img src="cover-art/" />
+            <img src="cover-art/crazysexycool.webp" />
           </div>
           <div class="item-details">
             <div class="item-title">CrazySexyCool</div>
@@ -292,12 +293,6 @@
           </div>
         </div>
 
-
-
-
-
-
-        
         <div class="collection-item">
           <div class="item-image cd-image">
             <img src="cover-art/kpop_demon.webp" />
@@ -1200,7 +1195,7 @@
 
       <div class="stats">
         <div class="stat-box">
-          <div class="stat-number">82</div>
+          <div class="stat-number">104</div>
           <div class="stat-label">Total CDs</div>
         </div>
         <div class="stat-box">
@@ -1211,7 +1206,7 @@
     </div>
 
     <footer>
-      <p>updated 3/12/2026</p>
+      <p>updated 11/15/2026</p>
     </footer>
 
     <script>
@@ -1247,6 +1242,7 @@
 
           switch (sortBy) {
             // Album title organization
+            // taken out for now
             case "title":
               sortedItems = items.sort((a, b) => {
                 const titleA = a
@@ -1285,9 +1281,9 @@
                 return yearA - yearB;
               });
               break;
-
+            
+            // Default order (original order)
             default:
-              // Default order (original order)
               sortedItems = originalOrder;
               break;
           }
